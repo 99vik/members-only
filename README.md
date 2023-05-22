@@ -1,7 +1,7 @@
 # README
 
-Odin project "Members Only!" exercise
-Simple web page where members (signed up users) can write posts, everyone can see all the written posts, but only members can see post's author.
+Odin project "Members Only!" exercise.\
+Simple web page where members (signed up users) can write posts, everyone can see all the written posts, but only members can see post's author.\
 
 
 
