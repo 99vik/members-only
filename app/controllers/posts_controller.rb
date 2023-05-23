@@ -17,12 +17,32 @@ class PostsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
 
-    def edit
-    end
+  def edit
+    @post = Post.find(params[:id])
 
-    def update
+    if current_user.id != @post.user_id
+      flash.alert = "Can't edit other people's posts!"
+      redirect_to root_path
     end
+  end
+
+  def update
+    @post = Post.find(params[:id])
+
+    if @post.update(post_params)
+      redirect_to root_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+
+    redirect_to root_path, status: :see_other
   end
 
   private

@@ -1,7 +1,21 @@
 <h1>Posts</h1>
 <ul>
     <% @posts.each do |post| %>
-        <li>TITLE: <%= post.title %>, BODY: <%= post.body %>
-        , AUTHOR: <%= post.user.username   %></li>
+        <li>
+        TITLE: <%= post.title %>, BODY: <%= post.body %>
+        , AUTHOR:
+        <% if current_user %>
+            <%= post.user.username   %>
+            <% if current_user %>
+                <% if current_user.id == post.user_id %>
+                    <%= link_to "Edit post", edit_post_path(post) %>
+                <% end %>
+            <% end %>
+        <% else %>
+            Anonymous
+        <% end %>
+
+        
+        </li>
     <% end %>
 </ul>
