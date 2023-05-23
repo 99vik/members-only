@@ -1,8 +1,7 @@
 <h1>Posts</h1>
-
 <ul>
     <% @posts.each do |post| %>
         <li>TITLE: <%= post.title %>, BODY: <%= post.body %>
-        , AUTHOR: <%= post.user_id   %></li>
+        , AUTHOR: <%= post.user.username   %></li>
     <% end %>
 </ul>
