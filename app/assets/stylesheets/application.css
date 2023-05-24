@@ -139,4 +139,61 @@
     justify-content: space-between;
  }
 
+ input[type="text"], input[type="email"], input[type="password"] {
+    width: 350px;
+    height: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    padding: 14px;
+    margin-top: 6px;
+ }
+
+ .user-form > * {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+ }
+
+ form label,em,i {
+    color: rgb(93, 93, 93);
+    font-size: 16px;
+ }
+
+ input[type="submit"] {
+    border: none;
+    text-decoration: none;
+    background-color: var(--main-color);
+    border-radius: 5px;
+    width: fit-content;
+    padding: 8px 16px;
+    color: white;
+    font-size: 16px;
+    margin-top: 25px;
+ }
+
+ input[type="submit"]:hover {
+    background-color: #2b57b4;
+    box-shadow: 1px 1px 2px 0.5px rgba(0,0,0,0.25);
+}
+
+.delete-btn {
+    border: none;
+    text-decoration: none;
+    background-color: rgb(173, 2, 2);
+    border-radius: 5px;
+    width: fit-content;
+    padding: 8px 16px;
+    color: white;
+    font-size: 16px;
+    margin-left: 60px;
+ }
+
+ .delete-btn:hover {
+    background-color: rgb(114, 0, 0);
+    box-shadow: 1px 1px 2px 0.5px rgba(0,0,0,0.25);
+}
+
+
+
+
 
