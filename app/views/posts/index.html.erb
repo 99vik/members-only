@@ -1,21 +1,22 @@
-<h1>Posts</h1>
-<ul>
-    <% @posts.each do |post| %>
-        <li>
-        TITLE: <%= post.title %>, BODY: <%= post.body %>
-        , AUTHOR:
-        <% if current_user %>
-            <%= post.user.username   %>
+<% @posts.each do |post| %>
+    <div class="post">
+        <div class="title"><%= post.title %></div>
+        <div class="body"><%= post.body %></div>
+        <div class="flex-body">
+            <div class="author">
+                <% if current_user %>
+                    <%= post.user.username   %>
+                <% else %>
+                    Anonymous
+                <% end %>
+            </div>
             <% if current_user %>
                 <% if current_user.id == post.user_id %>
-                    <%= link_to "Edit post", edit_post_path(post) %>
+                    <div class="edit_btn">
+                        <%= link_to "Edit post", edit_post_path(post) %>
+                    </div>
                 <% end %>
             <% end %>
-        <% else %>
-            Anonymous
-        <% end %>
-
-        
-        </li>
-    <% end %>
-</ul>
+                </div>
+        </div>
+<% end %>
